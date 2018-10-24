@@ -1,0 +1,42 @@
+<!doctype html>
+<html class="no-js" lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Schreibe einen Blogartikel</title>
+        <meta name="description" content="">
+
+        <link rel="manifest" href="site.webmanifest">
+
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+
+    <?php
+    session_start();
+    if ($_SESSION["log"]==TRUE) {
+        echo ("Herzlich Willkommen ".$_SESSION["username"].)}
+        else {header("Location: index.php");}
+
+    ?>
+
+
+
+        <p>Verfasse einen Blogartikel</p>
+
+        <form action="uebergabe.php" method="post">
+            <textarea content="text" name="text" cols="80" rows="30">
+                Bitte Blogartikel verfassen
+            </textarea>
+            <br>
+            <input type="submit">
+        </form>
+
+
+
+
+    </body>
+</html>
